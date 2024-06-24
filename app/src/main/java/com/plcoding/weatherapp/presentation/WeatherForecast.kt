@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun WeatherForecast(
     state: WeatherState,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier.padding(top = 5.dp, bottom = 10.dp)
 ) {
     state.weatherInfo?.weatherDataPerDay?.get(0)?.let { data ->
         Column(
@@ -21,11 +21,11 @@ fun WeatherForecast(
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
         ) {
-            Text(
-                text = "Today",
-                fontSize = 20.sp,
-                color = Color.White
-            )
+//            Text(
+//                text = "Today",
+//                fontSize = 20.sp,
+//                color = Color.White
+//            )
             Spacer(modifier = Modifier.height(16.dp))
             LazyRow(content = {
                 items(data) { weatherData ->
